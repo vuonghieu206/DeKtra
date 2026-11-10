@@ -1,0 +1,21 @@
+@model IEnumerable<VuongTrungHieu_241230729.Models.HangHoa>
+@{
+    ViewData["Title"] = "Vương Trung Hiếu";
+    var selectedCategory = ViewBag.MaLoai as int?;
+}
+<div class="content_top">
+    <div class="heading">
+        <h3>Vương Trung Hiếu</h3>
+    </div>
+    <div class="see">
+        <p>
+            <a asp-controller="HangHoa" asp-action="Index">
+                See all Products <span ></span>
+            </a>
+        </p>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="product-list">
+    @await Html.PartialAsync("_DanhSachHangHoa", Model)
+</div>

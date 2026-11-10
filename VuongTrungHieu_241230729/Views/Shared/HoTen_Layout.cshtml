@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Vương Trung Hiếu</title>
+    <link href="~/Content/css/style.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/Content/css/global.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/Content/css/easy-responsive-tabs.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/Content/css/slider.css" rel="stylesheet" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    @await Html.PartialAsync("HoTen_Header")
+    @await Html.PartialAsync("HoTen_MainContent", (object)RenderBody())
+    @await Html.PartialAsync("HoTen_Footer")
+    <script src="~/Scripts/jquery-1.7.2.min.js" asp-append-version="true"></script>
+    <script src="~/Scripts/easing.js" asp-append-version="true"></script>
+    <script src="~/Scripts/easyResponsiveTabs.js" asp-append-version="true"></script>
+    <script src="~/Scripts/jquery.accordion.js" asp-append-version="true"></script>
+    <script src="~/Scripts/jquery.easing.js" asp-append-version="true"></script>
+    <script src="~/Scripts/move-top.js" asp-append-version="true"></script>
+    <script src="~/Scripts/script.js" asp-append-version="true"></script>
+    <script src="~/Scripts/slides.min.jquery.js" asp-append-version="true"></script>
+    <script src="~/Scripts/startstop-slider.js" asp-append-version="true"></script>
+    <script src="~/js/hanghoa.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

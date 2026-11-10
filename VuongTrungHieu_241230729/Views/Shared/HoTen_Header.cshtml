@@ -1,0 +1,32 @@
+<div class="wrap">
+    <div class="header">
+        <div class="header_top">
+            <div class="logo">
+                <a asp-controller="HangHoa" asp-action="Index">
+                    <img src="@Url.Content("~/Content/images/logo.png")" alt="Online Store" />
+                </a>
+            </div>
+            <div class="cart">
+                <p>Welcome to our Online Store! <span>Cart:</span>
+                    <span class="wrapper-dropdown-2">0 item(s) - $0.00</span>
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="header_bottom">
+            <div class="menu">
+                <ul>
+                    @await Component.InvokeAsync("LoaiHang")
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="search_box">
+                <form id="search-form">
+                    <input id="search-input" type="text" placeholder="Search" />
+                    <input type="submit" value="" aria-label="Tìm kiếm" />
+                </form>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

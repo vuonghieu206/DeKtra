@@ -1,0 +1,14 @@
+@model IEnumerable<VuongTrungHieu_241230729.Models.LoaiHang>
+
+<li class="active">
+    <a asp-controller="HangHoa" asp-action="Index">VƯƠNG TRUNG HIẾU</a>
+</li>
+@foreach (var item in Model)
+{
+    <li>
+        <a href="@Url.Action("Index", "HangHoa", new { maLoai = item.MaLoai })"
+           class="category-link" data-category-id="@item.MaLoai">
+            @item.TenLoai
+        </a>
+    </li>
+}

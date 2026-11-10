@@ -1,0 +1,38 @@
+@model VuongTrungHieu_241230729.Models.HangHoaCreateViewModel
+@{
+    ViewData["Title"] = "Thêm hàng hóa";
+}
+<div class="content_top">
+    <div class="heading"><h3>Thêm hàng hóa mới</h3></div>
+    <div class="see"><p><a asp-action="Index">Quay lại danh sách</a></p></div>
+    <div class="clear"></div>
+</div>
+<div style="max-width:650px; padding:20px; background:#f7f7f7; margin-bottom:25px;">
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+        <p>
+            <label asp-for="MaLoai"></label><br />
+            <select asp-for="MaLoai" asp-items="ViewBag.LoaiHangs" style="width:100%; padding:9px;">
+                <option value="">-- Chọn loại hàng --</option>
+            </select>
+            <span asp-validation-for="MaLoai" style="color:red;"></span>
+        </p>
+        <p>
+            <label asp-for="TenHang"></label><br />
+            <input asp-for="TenHang" style="width:100%; padding:9px;" />
+            <span asp-validation-for="TenHang" style="color:red;"></span>
+        </p>
+        <p>
+            <label asp-for="Gia"></label><br />
+            <input asp-for="Gia" type="number" min="100" max="5000" step="1" style="width:100%; padding:9px;" />
+            <span asp-validation-for="Gia" style="color:red;"></span>
+        </p>
+        <p>
+            <label asp-for="ImageFile"></label><br />
+            <input asp-for="ImageFile" type="file" accept=".jpg,.png,.gif,.tiff" />
+            <span asp-validation-for="ImageFile" style="color:red;"></span>
+        </p>
+        <button type="submit" style="background:#bd2026;color:white;border:0;padding:10px 22px;">Lưu hàng hóa</button>
+    </form>
+</div>
